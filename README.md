@@ -40,4 +40,4 @@ This project is still under development and more features will be added in the f
 You can view the project here:
 
 ```txt
-[https://youssefahmed104.github.io/Advanced-Game-shop/]
+https://youssefahmed104.github.io/Advanced-Game-shop/
