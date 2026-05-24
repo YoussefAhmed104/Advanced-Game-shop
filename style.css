@@ -1,0 +1,445 @@
+/* fonts */
+@font-face {
+    font-family: 'CustomFont'; 
+    src: url('font/Xirod.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --main-color: #0B0F1A;
+    --cards-color: #111827;
+    --primary-color:#00D4FF;
+    --secondary-color:#8B5CF6;
+    --text-color: #E5E7EB;
+    --bottom-color: rgb(0, 255, 247);
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--main-color);
+}
+
+/* header */
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: var(--cards-color);
+
+}
+.header .name{
+    font-family: 'customfont';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px
+}
+.name h1{
+    font-size: 25px;
+}
+.header .name .icon{
+    rotate: 340deg;
+}
+.header .sections ul{
+    list-style: none;
+    display:flex;
+    gap: 20px;
+    color: #00D4FF;
+    align-items:center
+}
+.header .sections ul:last-child{
+    margin-right: 20px;
+}
+.header .sections a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    position:relative;
+    padding-bottom: 5px;
+}
+.header .sections a::before{
+    content:"";
+    width: 0%;
+    height:1.5px;
+    background-color:rgb(225, 225, 225);
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    transition: 0.2s ease;
+    transform: translateX(-50%);
+}
+.header .sections a:hover::before{
+    width: 100%;
+}
+.header .sections a.active::before{
+    width: 100%;
+}
+.search input{
+    outline: none;
+    border:none;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 40px;
+    border-radius: 3px;
+}
+.search input::placeholder{
+    font-weight: 500;
+    color: var(--main-color);
+    padding-left: 3px;
+}
+@media (min-width: 300px) and (max-width: 1024px) {
+    .search input{
+        width: 80px;
+        height: 20px;
+    }
+}
+@media (min-width: 1025px) {
+        .search input{
+        width: 200px;
+    }
+}
+
+/* Main content */
+.section{
+    display:flex;
+    flex-direction:column;
+    padding-left: 30px;
+    padding-top: 120px;
+}
+.sec-1 .games .track{
+    display:flex;
+    gap:50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    display:flex;
+    flex-direction:column;
+    background-color: var(--cards-color);
+    width: 200px;
+}
+.card img{
+    height:300px;
+}
+.card h2{
+    margin-top:10px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.card input{
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    height: 30px
+}
+.games{
+    width: 100%;
+    overflow-x: hidden;
+    padding: 20px 0px;
+}
+.sec-1 .games .track{
+    display:flex;
+    gap:20px;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-50%);
+    }
+}
+.sec-2{
+    display: flex;
+}
+.sec-2 .track{
+    display: flex;
+    gap: 30px;
+}
+.sec-2 .track .card{
+    display:flex;
+    flex-direction:column;
+    background-color: var(--cards-color);
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+}
+.sec-2 .track .card h2{
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+}
+.sec-2 .track .card a{
+    text-decoration: none;
+}
+.sec-2 .track .card img{
+    width: 450px;
+    height: 250px;
+}
+.sec-2 .track {
+    display:flex;
+    gap:20px;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+.cat{
+    width: 100%;
+    overflow-x: hidden;
+    padding: 20px 0px;
+}
+
+/* footer */
+.footer{
+    padding: 30px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: var(--cards-color);
+    height: 1o0px;
+}
+.footer .media{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.car img{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 50px;
+}
+
+/* ALL gmaes */
+.sec{
+background-image: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.9)
+),
+url("images/image\ copy.png");
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+.all-games{
+    display:flex;
+    gap:50px;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-top: 130px;
+    justify-content: center;
+}
+
+/* top games section */
+.top-container{
+    padding-top:200px;
+    padding-left:3%;
+    padding-right:3%;
+    padding-bottom:40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+}
+.top-container .cat{
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 97%;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 4px;
+    overflow-y: hidden;
+}
+.top-container .cat p{
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 20px;
+}
+.top-container .cat p:first-of-type{
+    margin-left: 65px;
+    width: 200px;
+    padding-right: 0px;
+}
+.space{
+    margin-right: 35px;
+}
+.space-2{
+    margin-right: 30px;
+}
+/* .top-container .cat p:last-of-type{
+    margin-right: 20px;
+} */
+.card-top .game{
+    display: flex;
+    width: 300px;
+    padding-right: 0px;
+    gap: 20px;
+    align-items: center;
+}
+.card-top .game img{
+    width: 70px;
+    border-radius: 5px;
+    height: 109px;
+    position: relative;
+}
+.card-top .game h1{
+    font-size: 20px;
+    color: var(--primary-color);
+}
+.arrange {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-color: #FF4655;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 75%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5px;
+    color: var(--text-color);
+    font-size: 17px;
+    font-weight: 600;
+    font-family: sans-serif;
+    z-index: 1;
+    margin-bottom: 65px;
+}
+.list .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cards-color);
+    height: 110px;
+    border-radius: 3px;
+    padding-right: 10px;
+}
+.list .card-top p{
+    margin-right: 80px;
+    color: var(--primary-color);
+}
+.list .card-top input{
+    height: 40px;
+    font-weight: 600;
+    color: var(--main-color);
+    outline: none;
+    border: none;
+    background-color: var(--bottom-color);
+    color: var(--main-color);
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.list .card-top input:active{
+    background-color: rgb(0, 222, 215);
+    scale: 0.9;
+}
+.list{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Profile Page */
+.cont{
+    display: flex;
+    flex-direction: column;
+    padding-top: 160px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+.cont .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cards-color);
+    border-radius: 100px 10px 10px 100px;
+}
+.cont .top .sub img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.cont .top .sub{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.cont .top .sub .name{
+    margin-right: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.cont .top .sub .name p{
+    margin: 0px;
+    margin-left: 10px;
+    color: #ffffff88;
+}
+.cont .top input,.head input{
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--bottom-color);
+    margin-right: 30px;
+}
+.cont .top input:active,.head input:active{
+    background-color: rgb(0, 222, 215);
+    scale: 0.9;
+}
+.copy{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.info{
+    padding-top: 30px;
+}
+.info .head{
+    display: flex;
+    justify-content: space-between;
+}
+.info {
+    padding-left: 10px;
+}
+.data .feild{
+    display: flex;
+    align-items: center;
+}
+.data{
+    background-color: var(--cards-color);
+    padding-left: 25px;
+    border-radius: 10px;
+}
+.feild p{
+    background-color: #1c263d;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #ffffffb1;
+    width: 90%;
+    margin-right: 20px;
+}
+.feild h2{
+    width: 250px;
+}
